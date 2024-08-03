@@ -1,0 +1,32 @@
+.header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .accordion .card-header {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+  }
+  
+  .accordion .btn-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .policy-actions {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+  }
+  
+  .policy-actions .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .policy-actions .btn-primary {
+    width: 100%;
+  }
+  

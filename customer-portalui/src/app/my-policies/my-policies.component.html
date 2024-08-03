@@ -1,0 +1,42 @@
+<div class="container mt-3">
+    <div class="header d-flex justify-content-between align-items-center mb-3">
+        <h3>Welcome {{ userFullName }}!</h3>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+      </div>
+      
+    <div class="row">
+      <div class="col-md-8">
+        <div class="accordion" id="policyDetailsAccordion">
+          <div *ngIf="selectedPolicy">
+            <app-policy-holder-details [policy]="selectedPolicy"></app-policy-holder-details>
+            <app-policy-details [policy]="selectedPolicy"></app-policy-details>
+            <app-coverage-details [policy]="selectedPolicy"></app-coverage-details>
+            <app-vehicle-details [policy]="selectedPolicy"></app-vehicle-details>
+          </div>
+          <div *ngIf="!selectedPolicy">
+            <p>Looks like you haven't linked any policies yet! Don't worry, it's easy. Just link your existing policies by clicking Add Policy.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="policy-actions">
+          <select class="form-control" [(ngModel)]="policyNumber">
+            <option value="" disabled selected>Select Policy Number</option>
+            <option *ngFor="let policy of policies" [value]="policy.policyNumber">{{ policy.policyNumber }}</option>
+          </select>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Chassis Number" [(ngModel)]="chassisNumber">
+          </div>
+          <button class="btn btn-primary mb-2" (click)="addPolicy()">Add Policy</button>
+          <div class="form-group">
+            <select class="form-control" [(ngModel)]="selectedPolicy" (change)="onPolicySelect(selectedPolicy)">
+              <option *ngFor="let policy of policies" [ngValue]="policy">{{ policy.policyNumber }}</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" (click)="removePolicy(selectedPolicy?.policyNumber)">Remove Policy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

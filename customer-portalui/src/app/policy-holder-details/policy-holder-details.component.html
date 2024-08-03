@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Policy Holder Details
+        </button>
+      </h2>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#policyDetailsAccordion">
+      <div class="card-body">
+        <div *ngIf="policy">
+          <p>FirstName: {{ policy.policyHolderDetails.firstName }}</p>
+          <p>LastName: {{ policy.policyHolderDetails.lastName }}</p>
+          <p>AddressLine1: {{ policy.policyHolderDetails.addressLine1 }}</p>
+          <p>AddressLine2: {{ policy.policyHolderDetails.addressLine2 }}</p>
+          <p>City: {{ policy.policyHolderDetails.city }}</p>
+          <p>State: {{ policy.policyHolderDetails.state }}</p>
+          <p>Pincode: {{ policy.policyHolderDetails.pincode }}</p>
+          <p>MobileNo: {{ policy.policyHolderDetails.mobileNo }}</p>
+          <p>Email: {{ policy.policyHolderDetails.email }}</p>
+          <p>LicenseNumber: {{ policy.policyHolderDetails.licenseNumber }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
